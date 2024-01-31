@@ -1,7 +1,13 @@
 import pickle
 import streamlit as st
+import os
 
-heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
+model_path = 'https://github.com/harxhpatel19/ml_projects/blob/main/heart_disease_model.sav'
+
+if os.path.exists(model_path):
+    heart_disease_model = pickle.load(open(model_path, 'rb'))
+else:
+    st.error("Error: Model file not found.")
 
 # sidebar for navigation
 selected = st.sidebar.selectbox('Heart Disease Prediction System', ['Heart Disease Prediction'])
