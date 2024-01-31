@@ -2,7 +2,7 @@ import pickle
 import streamlit as st
 import os
 
-model_path = 'https://github.com/harxhpatel19/ml_projects/blob/main/heart_disease_model.sav'
+model_path = 'https://github.com/harxhpatel19/ml_projects/blob/main/heart_disease_data.csv'
 
 if os.path.exists(model_path):
     heart_disease_model = pickle.load(open(model_path, 'rb'))
